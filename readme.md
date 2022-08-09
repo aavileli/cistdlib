@@ -1,4 +1,4 @@
-### This is a dagger cue package libary to be used with dagger client ###
+### This is a dagger cue package libary to be used with [dagger](https://docs.dagger.io/) client ###
 
 ## import package 
 ```go
