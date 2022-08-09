@@ -21,7 +21,7 @@ import "github.com/aavileli/cistdlib"
             mvnCmd: client.env.MVN_CMD
         }
 ```
-### EcrToken schema defination [EcrToken](ecrToken.cue)
+### EcrToken schema defination [EcrToken](ecrLogin.cue)
 ```go
         // Get ecr secret token required to push image from aws client 
         ecrToken: cistdlib.#EcrToken & {
