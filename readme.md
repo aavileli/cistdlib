@@ -1,10 +1,15 @@
-### This is a dagger cue package libary to be used with [dagger](https://docs.dagger.io/) client ###
+## This is a dagger cue package libary to be used with [dagger](https://docs.dagger.io/) client
 
-## import package 
+## download package into build project `cue.mod/pkg`
+```bash
+dagger project update
+dagger project update github.com/aavileli/cistdlib@v0.0.1
+```
+## import package in your build project `main.cue`
 ```go
 import "github.com/aavileli/cistdlib"
 ```
-## usage
+## Usage
 
 ### MvnBuild schema defination [MvnBuild](mvnBuild.cue)
 ```go
