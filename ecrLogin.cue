@@ -12,7 +12,8 @@ import (
 	// Pass optional aws credentials file otherwise use instance profile of node
 	credsFile?: dagger.#Secret
 	// aws profile to use if using in non ci environments 
-	profile:   string | *"default"
+	profile?:   string
+	_profile: string & { "--profile \(profile)" } | *""
 	_ecrlogin: aws.#Container & {
 		always: true
 		if credsFile != _|_ {
@@ -28,7 +29,7 @@ import (
 		// Aws command to retreive ecr token
 		command: {
 			name: "sh"
-			args: [ "-c", "aws ecr get-login-password --region \(region) --profile \(profile) > /token.txt"]
+			args: [ "-c", "aws ecr get-login-password --region \(region) \(_profile) > /token.txt"]
 		}
 		// token file to be exported 
 		export: secrets: "/token.txt": _
